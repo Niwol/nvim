@@ -1,10 +1,11 @@
 vim.g.loaded = 1
 vim.g.netrwPlugin = 1
 
-require'nvim-web-devicons'.setup({
- -- default = true;
-})
+-- nvim-web-devicons
+require'nvim-web-devicons'.setup()
 
+
+-- nvim-tree
 require("nvim-tree").setup({
   open_on_setup = true,
   git = {
@@ -12,6 +13,13 @@ require("nvim-tree").setup({
     ignore = false
   },
 })
-  
 
 vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>") 
+
+
+-- airline
+vim.cmd("runtime airline.vim")
+
+-- Theme
+vim.cmd("colorscheme onedarkpro")
+

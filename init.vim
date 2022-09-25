@@ -28,6 +28,11 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'olimorris/onedarkpro.nvim'
 Plug 'navarasu/onedark.nvim'
 
+" lualine
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Plug 'nvim-lualine/lualine.nvim'
+
 call plug#end()
 
 lua require("init")
@@ -37,6 +42,7 @@ let g:minimap_width = 10
 " let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
 let g:minimap_git_colors = 1
+
 
 syntax on
 

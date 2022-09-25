@@ -1,5 +1,5 @@
 
-require("nvim_tree")
+require("style")
 require("cmp_config")
 require("lsp")
 require("tree_sitter")
@@ -9,8 +9,4 @@ require("tree_sitter")
 
 require("nvim-autopairs").setup()
 -- require("minimap").setup()
-
--- Theme
-
-vim.cmd("colorscheme onedarkpro")
 
