@@ -3,6 +3,7 @@ require("style")
 require("cmp_config")
 require("lsp")
 require("tree_sitter")
+require("telescope_conf")
 
 
 -- Commons

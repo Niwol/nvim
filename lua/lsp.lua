@@ -6,6 +6,7 @@ local basic_keybinds = function()
 
   vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {buffer = 0})
   vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, {buffer = 0})
+  vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<CR>", {buffer = 0})
 
   vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer = 0})
 
