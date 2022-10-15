@@ -37,7 +37,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
+" Vim be good
+Plug 'ThePrimeagen/vim-be-good'
+
 call plug#end()
+
+let mapleader=" "
 
 lua require("init")
 
@@ -82,10 +87,11 @@ set laststatus=1
 set wildmenu
 
 set number
+set relativenumber
+
 set splitright
 set splitbelow
 
-let mapleader=" "
 
 
 " terminal

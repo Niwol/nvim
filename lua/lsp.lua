@@ -29,13 +29,24 @@ require'lspconfig'.pyright.setup{
 
 -- c_cpp
 
-require'lspconfig'.clangd.setup{
+--require'lspconfig'.clangd.setup{
+--  capabilities = capabilities,
+--
+--  cmd = {"clangd"},
+--  filetypes = {"c", "cpp", "objc", "objcpp", "cuda", "proto"},
+--
+--  on_attach = function()
+--    basic_keybinds()
+--  end,
+--}
+
+require'lspconfig'.ccls.setup {
   capabilities = capabilities,
 
-  cmd = {"clangd"},
-  filetypes = {"c", "cpp", "objc", "objcpp", "cuda", "proto"},
+  compilationDatabaseDirectory = "build",
 
   on_attach = function()
     basic_keybinds()
   end,
 }
+
