@@ -15,6 +15,18 @@ end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+-- Rust
+require("rust-tools").setup {
+  server = {
+    on_attach = function()
+      basic_keybinds()
+      vim.keymap.set("n", "K", "<cmd>RustHoverAction<CR>", {buffer = 0})
+      vim.keymap.set("n", "<leader>w", "<cmd>!cargo-fmt<CR>", {buffer = 0})
+    end
+  }
+}
+
+require("rust-tools").hover_range.hover_range()
 
 -- Python
 
@@ -50,3 +62,17 @@ require'lspconfig'.ccls.setup {
   end,
 }
 
+-- glsl
+
+require'lspconfig'.glslls.setup{
+  capabilities = capabilities,
+
+  filetypes = {
+    "glsl",
+    "vs", "fs"
+  },
+
+  on_attach = function()
+    basic_keybinds()
+  end,
+}

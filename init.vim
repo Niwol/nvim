@@ -5,9 +5,6 @@ call plug#begin()
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 
-" minimap
-Plug 'wfxr/minimap.vim'
-
 " nvim-cmp
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -40,18 +37,17 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 " Vim be good
 Plug 'ThePrimeagen/vim-be-good'
 
+" Rust tools
+Plug 'simrat39/rust-tools.nvim'
+
+" Gitgutter
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 let mapleader=" "
 
 lua require("init")
-
-" minimap options
-let g:minimap_width = 10
-" let g:minimap_auto_start = 1
-let g:minimap_auto_start_win_enter = 1
-let g:minimap_git_colors = 1
-
 
 syntax on
 
