@@ -13,7 +13,7 @@ local basic_keybinds = function()
   vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, {buffer = 0})
 end
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Rust
 require("rust-tools").setup {
@@ -41,26 +41,26 @@ require'lspconfig'.pyright.setup{
 
 -- c_cpp
 
---require'lspconfig'.clangd.setup{
---  capabilities = capabilities,
---
---  cmd = {"clangd"},
---  filetypes = {"c", "cpp", "objc", "objcpp", "cuda", "proto"},
---
---  on_attach = function()
---    basic_keybinds()
---  end,
---}
-
-require'lspconfig'.ccls.setup {
+require'lspconfig'.clangd.setup{
   capabilities = capabilities,
 
-  compilationDatabaseDirectory = "build",
+  cmd = {"clangd"},
+  filetypes = {"c", "cpp", "objc", "objcpp", "cuda", "proto"},
 
   on_attach = function()
     basic_keybinds()
   end,
 }
+
+--require'lspconfig'.ccls.setup {
+--  capabilities = capabilities,
+--
+--  compilationDatabaseDirectory = "build",
+--
+--  on_attach = function()
+--    basic_keybinds()
+--  end,
+--}
 
 -- glsl
 
