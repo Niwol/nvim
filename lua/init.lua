@@ -11,3 +11,10 @@ require("telescope_conf")
 require("nvim-autopairs").setup()
 -- require("minimap").setup()
 
+
+
+-- Remaps
+
+vim.keymap.set("n", "<leader>:", "<cmd>vertical resize +10<CR>") 
+vim.keymap.set("n", "<leader>;", "<cmd>vertical resize -10<CR>") 
+

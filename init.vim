@@ -61,8 +61,8 @@ set hidden
 set smartcase
 set scrolloff=8
 set noerrorbells
-set tabstop=2 softtabstop=2
-set shiftwidth=2
+set tabstop=4 softtabstop=4
+set shiftwidth=4
 set expandtab
 set smartindent
 set nu
@@ -88,10 +88,12 @@ set relativenumber
 set splitright
 set splitbelow
 
+" disable mouse
+set mouse=
+
 
 
 " terminal
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>ct :terminal<CR>
 nnoremap <leader>t :buffer term<CR>
-
