@@ -64,15 +64,24 @@ require'lspconfig'.clangd.setup{
 
 -- glsl
 
-require'lspconfig'.glslls.setup{
-  capabilities = capabilities,
-
-  filetypes = {
-    "glsl",
-    "vs", "fs"
-  },
-
-  on_attach = function()
-    basic_keybinds()
-  end,
-}
+-- require'lspconfig'.glslls.setup{
+-- --  capabilities = capabilities,
+-- 
+--     capabilities = {
+--         offsetEncoding = { "utf-8", "utf-16" },
+--         textDocument = {
+--             completion = {
+--                 editsNearCursor = true
+--             }
+--         }
+--     },
+-- 
+-- 
+--   filetypes = {
+--     "glsl",
+--   },
+-- 
+--   on_attach = function()
+--     basic_keybinds()
+--   end,
+-- }

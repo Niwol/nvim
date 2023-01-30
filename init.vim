@@ -21,6 +21,9 @@ Plug 'neovim/nvim-lspconfig'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" GLSL support
+Plug 'tikhomirov/vim-glsl'
+
 " One Dark themes
 Plug 'olimorris/onedarkpro.nvim'
 Plug 'navarasu/onedark.nvim'
@@ -97,3 +100,6 @@ set mouse=
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>ct :terminal<CR>
 nnoremap <leader>t :buffer term<CR>
+
+" GLSL
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
