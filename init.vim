@@ -27,11 +27,12 @@ Plug 'tikhomirov/vim-glsl'
 " One Dark themes
 Plug 'olimorris/onedarkpro.nvim'
 Plug 'navarasu/onedark.nvim'
+Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
 
 " lualine
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" Plug 'nvim-lualine/lualine.nvim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -103,3 +104,7 @@ nnoremap <leader>t :buffer term<CR>
 
 " GLSL
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+
+lua << EOF
+require('lualine').hide({unhide=true})
+EOF

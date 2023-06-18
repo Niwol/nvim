@@ -17,8 +17,17 @@ vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
 
 
 -- airline
-vim.cmd("runtime airline.vim")
+--vim.cmd("runtime airline.vim")
+
+require('lualine').get_config()
+require('lualine').setup()
+require('lualine').refresh({
+  scope = 'tabpage',  -- scope of refresh all/tabpage/window
+  place = { 'statusline', 'winbar', 'tabline' },  -- lualine segment ro refresh.
+})
+require('lualine').hide({unhide=true})
 
 -- Theme
-vim.cmd("colorscheme onedark")
+-- vim.cmd("colorscheme onedark")
+vim.cmd("colorscheme moonfly")
 
