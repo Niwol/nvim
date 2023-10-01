@@ -28,6 +28,7 @@ require("rust-tools").setup {
 
 require("rust-tools").hover_range.hover_range()
 
+
 -- Python
 
 require'lspconfig'.pyright.setup{
@@ -85,3 +86,15 @@ require'lspconfig'.clangd.setup{
 --     basic_keybinds()
 --   end,
 -- }
+
+
+-- Latex
+
+require'lspconfig'.ltex.setup{
+  capabilities = capabilities,
+
+  on_attach = function()
+    print("Hello LaTeX")
+    basic_keybinds()
+  end,
+}

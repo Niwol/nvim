@@ -24,14 +24,13 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " GLSL support
 Plug 'tikhomirov/vim-glsl'
 
-" One Dark themes
+" Themes
 Plug 'olimorris/onedarkpro.nvim'
 Plug 'navarasu/onedark.nvim'
 Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
+Plug 'Mofiqul/dracula.nvim'
 
 " lualine
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lualine/lualine.nvim'
 
 " Telescope
@@ -44,12 +43,21 @@ Plug 'ThePrimeagen/vim-be-good'
 " Rust tools
 Plug 'simrat39/rust-tools.nvim'
 
+" Vimtex
+Plug 'lervag/vimtex'
+
 " Gitgutter
 Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
 let mapleader=" "
+
+
+" Vimtex config
+filetype plugin indent on
+syntax enable
+
 
 lua require("init")
 
