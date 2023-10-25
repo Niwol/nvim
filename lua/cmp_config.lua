@@ -1,15 +1,24 @@
+local cmp = require("cmp")
+local lspkind = require("lspkind")
 
-vim.opt.completeopt={"menu", "menuone", "noselect"}
-
--- Set up nvim-cmp.
-local cmp = require'cmp'
-
-cmp.setup({
+cmp.setup {
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
+
+    formatting = {
+        format = lspkind.cmp_format {
+            with_text = true,
+            menu = {
+                nvim_lsp = "[LSP]",
+                luasnip = "[snip]",
+                path = "[path]",
+                buffer = "[buffer]"
+            },
+        },
+    },
 
   window = {
     -- completion = cmp.config.window.bordered(),
@@ -25,21 +34,11 @@ cmp.setup({
   }),
 
   sources = cmp.config.sources({
+    { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' }, -- For luasnip users.
-    { name = 'path'}
-  }, {
+    { name = 'path' },
     { name = 'buffer' },
   })
-})
+}
 
--- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
-  sources = cmp.config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-  }, {
-    { name = 'buffer' },
-  })
-})
-
---require('cmp').setup.buffer { sources = { { name = 'omni' } }  }

@@ -1,50 +1,41 @@
-
 call plug#begin()
 
 " nvim-tree
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 
-" nvim-cmp
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
-
-" nvim-autopairs
+" nvim-autopaurs
 Plug 'windwp/nvim-autopairs'
 
-" nvim-lspconfig
-Plug 'neovim/nvim-lspconfig'
-
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" GLSL support
-Plug 'tikhomirov/vim-glsl'
-
-" Themes
-Plug 'olimorris/onedarkpro.nvim'
+" themes
 Plug 'navarasu/onedark.nvim'
-Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
-Plug 'Mofiqul/dracula.nvim'
 
 " lualine
 Plug 'nvim-lualine/lualine.nvim'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 
-" Vim be good
-Plug 'ThePrimeagen/vim-be-good'
-
-" Rust tools
+" lsp-config
+Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/rust-tools.nvim'
 
-" Vimtex
-Plug 'lervag/vimtex'
+" nvim-cmp
+Plug 'onsails/lspkind.nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-nvim-lua'
+
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+
+Plug 'onsails/lspkind.nvim'
+
+" tree-sitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Gitgutter
 Plug 'airblade/vim-gitgutter'
@@ -53,15 +44,9 @@ call plug#end()
 
 let mapleader=" "
 
-
-" Vimtex config
-filetype plugin indent on
-syntax enable
-
-
+syntax on
 lua require("init")
 
-syntax on
 
 filetype plugin on
 filetype indent on
@@ -103,16 +88,6 @@ set splitbelow
 " disable mouse
 set mouse=
 
-
-
-" terminal
-tnoremap <Esc> <C-\><C-n>
-nnoremap <leader>ct :terminal<CR>
-nnoremap <leader>t :buffer term<CR>
-
-" GLSL
-autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
-
 lua << EOF
-require('lualine').hide({unhide=true})
+require("lualine").hide({ unhide = true })
 EOF
