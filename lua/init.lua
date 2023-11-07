@@ -91,5 +91,9 @@ require("lualine").setup{
 }
 
 
+-- luasnip
+require("snippets")
+
+
 -- mappings
 require("mappings")
