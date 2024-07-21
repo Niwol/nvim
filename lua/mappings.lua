@@ -38,3 +38,15 @@ end, {silent = true})
 
 -- cmp mappings
 -- Autocomplete specific mappings are defined in lua/cmp_config.lua
+
+
+-- dap
+local dap = require("dap")
+local dap_ui = require("dapui")
+vim.keymap.set('n', '<leader>dbb', dap.toggle_breakpoint, {})
+vim.keymap.set('n', '<leader>dbo', dap_ui.toggle, {})
+vim.keymap.set('n', '<F1>', dap.step_into, {})
+vim.keymap.set('n', '<F2>', dap.step_over, {})
+vim.keymap.set('n', '<F3>', dap.step_out, {})
+vim.keymap.set('n', '<F4>', dap.continue, {})
+

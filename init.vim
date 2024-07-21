@@ -41,6 +41,11 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Gitgutter
 Plug 'airblade/vim-gitgutter'
 
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'ldelossa/nvim-dap-projects'
+Plug 'theHamsta/nvim-dap-virtual-text'
+
 call plug#end()
 
 let mapleader=" "
