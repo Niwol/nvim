@@ -1,6 +1,9 @@
 -- nvim-tree
 vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
 
+local api = require("nvim-tree.api")
+vim.keymap.set('n', '+', api.tree.change_root_to_node, {})
+
 
 -- telescope
 local builtin = require("telescope.builtin")

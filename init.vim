@@ -9,6 +9,7 @@ Plug 'windwp/nvim-autopairs'
 
 " themes
 Plug 'navarasu/onedark.nvim'
+Plug 'NLKNguyen/papercolor-theme'
 
 " lualine
 Plug 'nvim-lualine/lualine.nvim'
@@ -84,6 +85,8 @@ set relativenumber
 
 set splitright
 set splitbelow
+
+set background=light
 
 " disable mouse
 set mouse=
