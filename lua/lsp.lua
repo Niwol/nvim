@@ -57,6 +57,6 @@ require'lspconfig'.clangd.setup{
 require("lspconfig").lua_ls.setup {}
 
 -- Debugging
-require("dapui").setup()
-require("nvim-dap-projects").search_project_config()
-require("nvim-dap-virtual-text").setup()
+--require("dapui").setup()
+--require("nvim-dap-projects").search_project_config()
+--require("nvim-dap-virtual-text").setup()
