@@ -18,17 +18,19 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 
 -- Rust
-require("rust-tools").setup {
-    server = {
-        on_attach = function()
-            basic_keybinds()
-            vim.keymap.set("n", "K", "<cmd>RustHoverAction<CR>", {buffer = 0})
-            vim.keymap.set("n", "<leader>w", "<cmd>!cargo-fmt<CR>", {buffer = 0})
-        end
-    }
-}
+--require("rust-tools").setup {
+--    server = {
+--        on_attach = function()
+--            basic_keybinds()
+--            vim.keymap.set("n", "K", "<cmd>RustHoverAction<CR>", {buffer = 0})
+--            vim.keymap.set("n", "<leader>w", "<cmd>!cargo-fmt<CR>", {buffer = 0})
+--        end
+--    }
+--}
+--
+--require("rust-tools").hover_range.hover_range()
 
-require("rust-tools").hover_range.hover_range()
+require'lspconfig'.rust_analyzer.setup({})
 
 
 -- Python

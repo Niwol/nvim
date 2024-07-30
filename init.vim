@@ -93,6 +93,8 @@ set splitbelow
 
 set background=light
 
+set shell=/bin/zsh
+
 " disable mouse
 set mouse=
 
