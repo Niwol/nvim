@@ -30,7 +30,14 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 --
 --require("rust-tools").hover_range.hover_range()
 
-require'lspconfig'.rust_analyzer.setup({})
+require'lspconfig'.rust_analyzer.setup({
+    capabilities = capabilities,
+
+    on_attach = function()
+        basic_keybinds()
+        vim.keymap.set("n", "<leader>w", "<cmd>!cargo-fmt<CR>", {buffer = 0})
+    end
+})
 
 
 -- Python
