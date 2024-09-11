@@ -18,26 +18,26 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 
 -- Rust
---require("rust-tools").setup {
---    server = {
---        on_attach = function()
---            basic_keybinds()
---            vim.keymap.set("n", "K", "<cmd>RustHoverAction<CR>", {buffer = 0})
---            vim.keymap.set("n", "<leader>w", "<cmd>!cargo-fmt<CR>", {buffer = 0})
---        end
---    }
---}
+require("rust-tools").setup {
+    server = {
+        on_attach = function()
+            basic_keybinds()
+            vim.keymap.set("n", "K", "<cmd>RustHoverAction<CR>", {buffer = 0})
+            vim.keymap.set("n", "<leader>w", "<cmd>!cargo-fmt<CR>", {buffer = 0})
+        end
+    }
+}
+
+require("rust-tools").hover_range.hover_range()
+
+--require'lspconfig'.rust_analyzer.setup({
+--    capabilities = capabilities,
 --
---require("rust-tools").hover_range.hover_range()
-
-require'lspconfig'.rust_analyzer.setup({
-    capabilities = capabilities,
-
-    on_attach = function()
-        basic_keybinds()
-        vim.keymap.set("n", "<leader>w", "<cmd>!cargo-fmt<CR>", {buffer = 0})
-    end
-})
+--    on_attach = function()
+--        basic_keybinds()
+--        vim.keymap.set("n", "<leader>w", "<cmd>!cargo-fmt<CR>", {buffer = 0})
+--    end
+--})
 
 
 -- Python
@@ -64,6 +64,18 @@ require'lspconfig'.clangd.setup{
 
 -- lua
 require("lspconfig").lua_ls.setup {}
+
+-- gdscript
+require("lspconfig")["gdscript"].setup({
+    name = "godot",
+    cmd = vim.lsp.rpc.connect("127.0.0.1", "6005"),
+
+    capabilities = capabilities,
+
+    on_attach = function()
+        basic_keybinds()
+    end
+})
 
 -- Debugging
 --require("dapui").setup()
